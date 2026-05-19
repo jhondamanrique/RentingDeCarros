@@ -27,5 +27,25 @@ public class Validaciones {
         }
         return Dato;
     }
+
+    public static String ValidarLetras(String mensaje, Scanner sc){
+        System.out.println(mensaje);
+        String Dato = sc.nextLine();
+        if (!Dato.matches("[a-zA-Z ]+")){
+            System.out.println("Por favor, ingrese solo letras.");
+            return ValidarLetras(mensaje, sc);
+        }
+        return Dato;
+    }
+
+    public static String ValidarPlaca(String mensaje, Scanner sc){
+        System.out.println(mensaje);
+        String Dato = sc.nextLine();
+        if (!Dato.matches("[A-Z]{3}-\\d{3}")){
+            System.out.println("Por favor, ingrese una placa válida (formato: ABC-123).");
+            return ValidarPlaca(mensaje, sc);
+        }
+        return Dato;
+    }
 }
 
